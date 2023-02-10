@@ -8,6 +8,7 @@ const colorOptions = Array.from(
   document.getElementsByClassName("color-option")
 );
 const lineWidth = document.getElementById("line-width");
+const fontSize = document.getElementById("font-size");
 const color = document.getElementById("color");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -19,6 +20,8 @@ canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 
 ctx.lineWidth = lineWidth.value;
+ctx.font = `${fontSize.value}px Arial`;
+
 ctx.lineCap = "round";
 let isPainting = false;
 let isFilling = false;
@@ -45,6 +48,11 @@ function onLineWidthChange(event) {
   ctx.lineWidth = event.target.value;
 }
 
+function onFontSizeChange(event) {
+  console.log(event.target.value);
+  ctx.font = `${event.target.value}px Arial`;
+}
+
 function onColorchange(event) {
   ctx.strokeStyle = event.target.value;
   ctx.fillStyle = event.target.value;
@@ -60,10 +68,10 @@ function onColorClick(event) {
 function onModeClick() {
   if (isFilling) {
     isFilling = false;
-    modeBtn.innerText = "Fill";
+    modeBtn.innerText = "🌈 Fill";
   } else {
     isFilling = true;
-    modeBtn.innerText = "Draw";
+    modeBtn.innerText = "🖍️ Draw";
   }
 }
 
@@ -81,7 +89,7 @@ function onDestroyClick() {
 function onEraserClick() {
   ctx.strokeStyle = "white";
   isFilling = false;
-  modeBtn.innerText = "Fill";
+  modeBtn.innerText = "🌈 Fill";
 }
 
 function onFileChange(event) {
@@ -100,7 +108,6 @@ function onDoubleClick(event) {
   if (text !== "") {
     ctx.save();
     ctx.lineWidth = 1;
-    ctx.font = "68px serif";
     ctx.fillText(text, event.offsetX, event.offsetY);
     ctx.lineWidth = lineWidth.value;
     ctx.restore();
@@ -122,6 +129,7 @@ canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
 canvas.addEventListener("click", onCanvasClick);
 lineWidth.addEventListener("change", onLineWidthChange);
+fontSize.addEventListener("change", onFontSizeChange);
 color.addEventListener("change", onColorchange);
 
 colorOptions.forEach((color) => {

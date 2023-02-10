@@ -69,8 +69,7 @@
     <canvas></canvas>
     <div class="btns">
       <button>
-        <div>✏️ Pencil Size</div>
-        <br />
+        <div class="size">✏️ Pencil Size</div>
         <input
           id="line-width"
           type="range"
@@ -88,7 +87,17 @@
         🖼️ Add Photo
         <input type="file" accept="image/jpeg" id="file" />
       </label>
-
+      <button>
+        <div class="size">🔠 Font Size</div>
+        <input
+          id="font-size"
+          type="range"
+          min="10"
+          max="100"
+          value="55"
+          step="1"
+        />
+      </button>
       <input type="text" id="text" placeholder="Add text here... :)" />
       <button id="save">💾 Save Image</button>
     </div>
