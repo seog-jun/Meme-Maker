@@ -68,25 +68,29 @@
     </div>
     <canvas></canvas>
     <div class="btns">
-      <input
-        id="line-width"
-        type="range"
-        min="1"
-        max="10"
-        value="5"
-        step="0.1"
-      />
+      <button>
+        <div>✏️ Pencil Size</div>
+        <br />
+        <input
+          id="line-width"
+          type="range"
+          min="1"
+          max="10"
+          value="5"
+          step="0.1"
+        />
+      </button>
 
-      <button id="mode-btn">🩸 Fill</button>
-      <button id="destroy-btn">💣 Destroy</button>
-      <button id="eraser-btn">❌ Erase</button>
+      <button id="mode-btn">🌈 Fill</button>
+      <button id="destroy-btn">🗑️ Reset</button>
+      <button id="eraser-btn">🧼 Erase</button>
       <label for="file">
-        📌 Add Photo
+        🖼️ Add Photo
         <input type="file" accept="image/jpeg" id="file" />
       </label>
 
       <input type="text" id="text" placeholder="Add text here... :)" />
-      <button id="save">🖼 Save Image</button>
+      <button id="save">💾 Save Image</button>
     </div>
     <script src="app.js"></script>
   </body>

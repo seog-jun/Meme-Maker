@@ -86,3 +86,32 @@ input#text {
 input#file {
   display: none;
 }
+
+input#line-width {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  background: white; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+#line-width:hover {
+  opacity: 1;
+}
+
+#line-width::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+#line-width::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #04aa6d;
+  cursor: pointer;
+}
