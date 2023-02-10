@@ -59,13 +59,14 @@ button,
 label {
   all: unset;
   padding: 10px 0px;
-  text-align: center;
+  padding-left: 15px;
   background-color: gray;
   color: white;
   font-weight: 500;
   cursor: pointer;
   border-radius: 10px;
   transition: opacity linear 0.1s;
+  width: 150px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
@@ -81,6 +82,7 @@ input#text {
   font-weight: 500;
   background-color: white;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  width: 165px;
 }
 
 input#file {
@@ -89,4 +91,9 @@ input#file {
 
 .size {
   padding-bottom: 8px;
+}
+
+#font-select {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

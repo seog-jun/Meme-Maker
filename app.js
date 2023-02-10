@@ -9,6 +9,7 @@ const colorOptions = Array.from(
 );
 const lineWidth = document.getElementById("line-width");
 const fontSize = document.getElementById("font-size");
+const fontFamily = document.getElementById("font-select");
 const color = document.getElementById("color");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -20,7 +21,7 @@ canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 
 ctx.lineWidth = lineWidth.value;
-ctx.font = `${fontSize.value}px Arial`;
+ctx.font = `${fontSize.value}px ${fontFamily.value}`;
 
 ctx.lineCap = "round";
 let isPainting = false;
@@ -49,8 +50,11 @@ function onLineWidthChange(event) {
 }
 
 function onFontSizeChange(event) {
-  console.log(event.target.value);
-  ctx.font = `${event.target.value}px Arial`;
+  ctx.font = `${event.target.value}px ${fontFamily.value}`;
+}
+
+function onFontFamilychange(event) {
+  ctx.font = `${fontSize.value}px ${event.target.value}`;
 }
 
 function onColorchange(event) {
@@ -130,6 +134,7 @@ canvas.addEventListener("mouseleave", cancelPainting);
 canvas.addEventListener("click", onCanvasClick);
 lineWidth.addEventListener("change", onLineWidthChange);
 fontSize.addEventListener("change", onFontSizeChange);
+fontFamily.addEventListener("change", onFontFamilychange);
 color.addEventListener("change", onColorchange);
 
 colorOptions.forEach((color) => {

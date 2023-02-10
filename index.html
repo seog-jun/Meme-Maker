@@ -69,7 +69,7 @@
     <canvas></canvas>
     <div class="btns">
       <button>
-        <div class="size">✏️ Pencil Size</div>
+        <div class="size">✏️ Pencil</div>
         <input
           id="line-width"
           type="range"
@@ -88,7 +88,24 @@
         <input type="file" accept="image/jpeg" id="file" />
       </label>
       <button>
-        <div class="size">🔠 Font Size</div>
+        <div class="size">🔠 Font</div>
+        <select name="fonts" id="font-select" requried="">
+          <option style="font-family: arial">Arial</option>
+          <option style="font-family: 'Times New Roman'">
+            Times New Roman
+          </option>
+          <option style="font-family: Verdana">Verdana</option>
+          <option
+            style="
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+            "
+          >
+            Calibri
+          </option>
+          <option style="font-family: 'Trebuchet MS'">Trebuchet MS</option>
+        </select>
+        <br />
         <input
           id="font-size"
           type="range"
