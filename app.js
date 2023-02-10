@@ -136,11 +136,9 @@ lineWidth.addEventListener("change", onLineWidthChange);
 fontSize.addEventListener("change", onFontSizeChange);
 fontFamily.addEventListener("change", onFontFamilychange);
 color.addEventListener("change", onColorchange);
-
 colorOptions.forEach((color) => {
   color.addEventListener("click", onColorClick);
 });
-
 modeBtn.addEventListener("click", onModeClick);
 destroyBtn.addEventListener("click", onDestroyClick);
 eraseBtn.addEventListener("click", onEraserClick);
